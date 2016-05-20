@@ -1,4 +1,4 @@
-  require("querystring");
+  var qs=require("querystring");
   var drawMiLogo={};
     drawMiLogo.XXXL=0.16;
     drawMiLogo.XXL=0.14;
