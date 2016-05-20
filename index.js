@@ -1,3 +1,4 @@
+  require("querystring");
   var drawMiLogo={};
     drawMiLogo.XXXL=0.16;
     drawMiLogo.XXL=0.14;
@@ -132,12 +133,18 @@
     }
     return str;
   }
-module.exports=function(width,background,color,type){
+
+  function draw(width,background,color,type){
     width=width||50;
     var xtype=drawMiLogo[(type+"").toUpperCase()] || drawMiLogo.M
     var opt={
       background:background||"#ef5b00",
       color:color||"#FFFFFF"
     }
-  return  drawMiLogoSVG(width,xtype,opt)
-}
+    return  drawMiLogoSVG(width,xtype,opt)
+  }
+  module.exports=function(content){
+    var params=qs.parse( this.query.replace(/^\?/,"") );
+    var svgString=draw(params.width,params.background,params.color,params.type);
+    return  content.replace("@milogo-svg@",svgString);
+  }
