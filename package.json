@@ -1,0 +1,14 @@
+{
+  "name": "milogo-loader",
+  "version": "1.0.0",
+  "description": "genernator milogo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "milogo"
+  ],
+  "author": "panjun847@gmail.com",
+  "license": "ISC"
+}
